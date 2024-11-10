@@ -3,3 +3,136 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* TYPOGRAPHY */
+
+html {
+    font-family: "input-mono-narrow", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.5em;
+}
+
+h1 {
+    font-family: "input-mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 3rem;
+    line-height: 3.5rem;
+}
+
+footer p {
+    color: white;
+}
+
+span {
+    font-family: sans-serif;
+}
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+a img {
+    width: 100%;
+}
+
+nav img {
+    max-height: 2rem;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    padding-left: 3rem;
+}
+
+nav a:link, nav a:visited {
+    color: white;
+    text-decoration: none;
+    border-bottom: 2px solid white;
+}
+
+nav a:focus {
+    outline: 1px solid white;
+    outline-offset: 6px;
+    border-bottom: none;
+}
+
+nav a:hover, nav a:active {
+    border-bottom: 4px solid white;
+    outline: none;
+}
+
+a.logo:link, a.logo:hover, a.logo:focus, a.logo:active, a.logo:visited {
+    border-bottom: none;
+}
+
+/* LAYOUT */
+
+header {
+    background-color: black;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+main {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 40rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+iframe {
+    margin-top: 3rem;
+}
+
+footer {
+    background-color: black;
+    padding: 2rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 2rem;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 52rem) {
+/* when the screen width is under 52rem, 
+navigation becomes vertical and h1 gets smaller*/
+
+    h1 {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    nav {
+        flex-flow: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-flow: column;
+        margin-top: 1rem;
+        align-items: center;
+    }
+
+    nav li {
+        padding-top: 1rem;
+        padding-left: 0;
+    }
+}
