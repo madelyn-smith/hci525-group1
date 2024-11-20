@@ -93,6 +93,16 @@ main {
     padding-right: 2rem;
 }
 
+main.timeline {
+    max-width: none;
+}
+
+section.timeline-top {
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 iframe {
     margin-top: 3rem;
 }
