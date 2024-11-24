@@ -14,12 +14,17 @@ html {
     line-height: 1.5em;
 }
 
-h1 {
+h1, h2 {
     font-family: "input-mono", monospace;
     font-weight: 700;
     font-style: normal;
     font-size: 3rem;
     line-height: 3.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
 }
 
 footer p {
@@ -124,16 +129,58 @@ h1 {
     margin-bottom: 2rem;
 }
 
+/* BIO GRID LAYOUT */
+
+section.bio-container {
+    max-width: 65rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px, auto, 100px;
+    gap: 1.5rem 3rem;
+}
+
+.bio-image {
+    width: 100%;
+    max-width: 20rem;
+    border-radius: 100%;
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 3;
+}
+
+.bio-name {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 1;
+}
+
+.bio {
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 1;
+}
+
+.bio-audio {
+    grid-column: 2 / span 2;
+    grid-row: 3 / span 1;
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 60rem) {
 /* when the screen width is under 60rem, 
-navigation becomes vertical and h1 gets smaller*/
+navigation becomes vertical, headings get smaller,
+and bios become vertical*/
 
     h1 {
         font-size: 2rem;
         line-height: 2.5rem;
         margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        line-height: 2rem;
     }
 
     nav {
@@ -150,5 +197,39 @@ navigation becomes vertical and h1 gets smaller*/
     nav li {
         padding-top: 1rem;
         padding-left: 0;
+    }
+
+    section.bio-container {
+        max-width: 40rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 4rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 25rem, 100px, auto, 100px;
+        gap: 1.5rem 3rem;
+        justify-items: center;
+    }
+    
+    .bio-image {
+        width: 100%;
+        border-radius: 100%;
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+    }
+    
+    .bio-name {
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+    }
+    
+    .bio {
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 1;
+    }
+    
+    .bio-audio {
+        grid-column: 1 / span 1;
+        grid-row: 4 / span 1;
     }
 }
