@@ -35,7 +35,7 @@ span {
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 }
 
 a img {
@@ -43,7 +43,7 @@ a img {
 }
 
 nav img {
-    max-height: 2rem;
+    max-height: 14rem;
 }
 
 nav ul {
@@ -54,6 +54,7 @@ nav ul {
 
 nav li {
     padding-left: 3rem;
+    text-align: center;
 }
 
 nav a:link, nav a:visited {
@@ -120,8 +121,8 @@ h1 {
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 52rem) {
-/* when the screen width is under 52rem, 
+@media screen and (max-width: 53rem) {
+/* when the screen width is under 53rem, 
 navigation becomes vertical and h1 gets smaller*/
 
     h1 {
