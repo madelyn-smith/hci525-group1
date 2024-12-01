@@ -14,12 +14,17 @@ html {
     line-height: 1.5em;
 }
 
-h1 {
+h1, h2 {
     font-family: "input-mono", monospace;
     font-weight: 700;
     font-style: normal;
     font-size: 3rem;
     line-height: 3.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
 }
 
 footer p {
@@ -35,7 +40,7 @@ span {
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 }
 
 a img {
@@ -43,7 +48,7 @@ a img {
 }
 
 nav img {
-    max-height: 2rem;
+    max-height: 14rem;
 }
 
 nav ul {
@@ -54,6 +59,7 @@ nav ul {
 
 nav li {
     padding-left: 3rem;
+    text-align: center;
 }
 
 nav a:link, nav a:visited {
@@ -79,13 +85,19 @@ a.logo:link, a.logo:hover, a.logo:focus, a.logo:active, a.logo:visited {
 
 /* LAYOUT */
 
-header {
-    background-color: black;
+nav {
     padding: 2rem;
-    margin-bottom: 3rem;
+    background-color: black;
+}
+
+img.banner {
+    width: 100%;
+    position: relative;
+    bottom: 10px;
 }
 
 main {
+    margin-top: 3rem;
     margin-left: auto;
     margin-right: auto;
     max-width: 40rem;
@@ -93,8 +105,23 @@ main {
     padding-right: 2rem;
 }
 
+main.full-width {
+    max-width: none;
+}
+
+section.reduced-width {
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 iframe {
     margin-top: 3rem;
+    width: 100%;
+}
+
+iframe.map {
+    height: 40rem;
 }
 
 footer {
@@ -108,16 +135,59 @@ h1 {
     margin-bottom: 2rem;
 }
 
+/* BIO GRID LAYOUT */
+
+section.bio-container {
+    max-width: 65rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px, auto, 100px;
+    gap: 1.5rem 3rem;
+}
+
+.bio-image {
+    width: 100%;
+    max-width: 20rem;
+    border-radius: 100%;
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 3;
+}
+
+.bio-name {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 1;
+}
+
+.bio {
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 1;
+}
+
+.bio-audio {
+    grid-column: 2 / span 2;
+    grid-row: 3 / span 1;
+}
+
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 52rem) {
-/* when the screen width is under 52rem, 
-navigation becomes vertical and h1 gets smaller*/
+@media screen and (max-width: 60rem) {
+/* when the screen width is under 60rem, 
+navigation becomes vertical, headings get smaller,
+and bios become vertical*/
 
     h1 {
         font-size: 2rem;
         line-height: 2.5rem;
         margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        line-height: 2rem;
     }
 
     nav {
@@ -134,5 +204,39 @@ navigation becomes vertical and h1 gets smaller*/
     nav li {
         padding-top: 1rem;
         padding-left: 0;
+    }
+
+    section.bio-container {
+        max-width: 40rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 4rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 25rem, 100px, auto, 100px;
+        gap: 1.5rem 3rem;
+        justify-items: center;
+    }
+    
+    .bio-image {
+        width: 100%;
+        border-radius: 100%;
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+    }
+    
+    .bio-name {
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+    }
+    
+    .bio {
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 1;
+    }
+    
+    .bio-audio {
+        grid-column: 1 / span 1;
+        grid-row: 4 / span 1;
     }
 }
