@@ -14,7 +14,7 @@ html {
     line-height: 1.5em;
 }
 
-h1, h2 {
+h1, h2, h3 {
     font-family: "input-mono", monospace;
     font-weight: 700;
     font-style: normal;
@@ -25,6 +25,11 @@ h1, h2 {
 h2 {
     font-size: 2rem;
     line-height: 2.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
 }
 
 footer p {
@@ -96,6 +101,44 @@ img.banner {
     bottom: 10px;
 }
 
+div.border img {
+    border: 1px solid gray;
+}
+
+h2 a:link, h2 a:visited {
+    color: black;
+    text-decoration: none;
+    border-bottom: 2px solid black;
+}
+
+h2 a:focus {
+    outline: 1px solid black;
+    outline-offset: 4px;
+    border-bottom: none;
+}
+
+h2 a:hover, h2 a:active {
+    border-bottom: 4px solid black;
+    outline: none;
+}
+
+h3 a:link, h3 a:visited {
+    color: black;
+    text-decoration: none;
+    border-bottom: 2px solid black;
+}
+
+h3 a:focus {
+    outline: 1px solid black;
+    outline-offset: 4px;
+    border-bottom: none;
+}
+
+h3 a:hover, h3 a:active {
+    border-bottom: 4px solid black;
+    outline: none;
+}
+
 main {
     margin-top: 3rem;
     margin-left: auto;
@@ -124,6 +167,14 @@ iframe.map {
     height: 40rem;
 }
 
+iframe.ref {
+    display: block;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50rem;
+}
+
 footer {
     background-color: black;
     padding: 2rem;
@@ -133,6 +184,10 @@ footer {
 
 h1 {
     margin-bottom: 2rem;
+}
+
+h2 {
+    margin-bottom: 1rem;
 }
 
 /* BIO GRID LAYOUT */
@@ -172,12 +227,37 @@ section.bio-container {
     grid-row: 3 / span 1;
 }
 
+/* AR IMAGE GRID LAYOUTS */
+
+section.two-up-container {
+    display: grid;
+    margin-top: 3rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.image-grid img {
+    width: 100%;
+}
+
+div.flex {
+    display: flex;
+    flex-flow: row no wrap;
+    align-items: center;
+}
+
+.flex img {
+    width: 33%;
+    max-width: 10rem;
+    padding-right: 2rem;
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 60rem) {
 /* when the screen width is under 60rem, 
 navigation becomes vertical, headings get smaller,
-and bios become vertical*/
+and grids become vertical*/
 
     h1 {
         font-size: 2rem;
@@ -188,6 +268,7 @@ and bios become vertical*/
     h2 {
         font-size: 1.5rem;
         line-height: 2rem;
+        margin-bottom: 0.5rem;
     }
 
     nav {
@@ -238,5 +319,13 @@ and bios become vertical*/
     .bio-audio {
         grid-column: 1 / span 1;
         grid-row: 4 / span 1;
+    }
+
+    section.two-up-container {
+        max-width: 40rem;
+        margin-left: auto;
+        margin-right: auto;
+        grid-template-columns: 1fr;
+        gap: 3rem;
     }
 }
